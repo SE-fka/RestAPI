@@ -16,21 +16,19 @@ You can install all the required dependencies by running
 ```
 
 python -m venv env
-```
 
 pip install -r requirements.txt
-```
 
 python manage.py makemigrations
-```
 
 python manage.py migrate
-```
 
 python manage.py runserver
-```
+
+
+
 
 ## Structure
-In a RESTful API, endpoints (URLs) define the structure of the API and how end users access data from our application using the HTTP methods. Endpoints should be logically organized in Post Man collections.
+In a RESTful API, endpoints (URLs) define the structure of the API and how end users access data from application using the HTTP methods. Endpoints should be logically organized in Post Man collections.
 
 
