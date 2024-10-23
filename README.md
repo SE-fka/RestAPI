@@ -1,4 +1,4 @@
-# CATE A DJANGO API WITH DJANGO REST FRAMEWORK
+# CREATE A DJANGO API WITH DJANGO REST FRAMEWORK
 [Django REST framework](http://www.django-rest-framework.org/) is a powerful and flexible toolkit for building Web APIs.
 
 ## Requirements
