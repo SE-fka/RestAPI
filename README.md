@@ -13,7 +13,6 @@ You can do this by running the command
 
 
 You can install all the required dependencies by running
-```
 
 python -m venv env
 
@@ -25,6 +24,7 @@ python manage.py migrate
 
 python manage.py runserver
 
+```
 
 
 
