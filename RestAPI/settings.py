@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
+
 LOGIN_REDIRECT_URL = '/'  # or wherever you want to redirect after login
 LOGOUT_REDIRECT_URL = '/'  # or wherever you want to redirect after logout
 APPEND_SLASH = False
@@ -96,7 +97,30 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'FIELDS': [
+            'id',
+            'email',
+            'name',
+            'first_name',
+            'last_name',
+        ],
+    }
+}
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1074747657358239'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '4d51836cfe0ea8c1989a8950ea284d36'  # App Secret
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'public_profile']
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = 'http://localhost:8000/accounts/facebook/login/callback/'
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'  # Redirect to home or any other page after login
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

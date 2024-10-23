@@ -19,6 +19,7 @@ from users.views import ChangePasswordView, HomeView, SignupView, UserLoginView,
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('', HomeView.as_view(), name='home_api'),
 
     #Social Google siginup and login
@@ -27,9 +28,9 @@ urlpatterns = [
     path('accounts/google/callback/login/', include('allauth.urls')),
  
     #Social Facebook siginup and login
-    path('accounts/facebook/callback/', include('allauth.urls')),
-    path('accounts/facebook/callback/signup/', include('allauth.urls')),
-    path('accounts/facebook/callback/login/', include('allauth.urls')),
+    path('accounts/facebook/login/callback/', include('allauth.urls')),
+    path('accounts/facebook/login/signup/', include('allauth.urls')),
+    path('accounts/facebook/login/', include('allauth.urls')),
     
     #For user siginup and login
     path('api/auth/signup/', SignupView.as_view(), name='signup'),
